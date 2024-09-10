@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "bookmark-background": "#D9ECFF",
+                        "bookmark-light-pink": "#04016C",
+                        "bookmark-blue": "#4A16BD",
+                        "bookmark-sky": "#739FE8",
+                        "bookmark-violet": "#4F18CA",
+                        "bookmark-pink": "#E441FF",
+                        "bookmark-mixed": "#931BBD",
+                        "bookmark-h-span": "#0E38CD",
+                        "bookmark-f-span": "#4883FF",
+                        "bookmark-black": "#000000",
+                        "bookmark-light-gray": "#4A4A4A",
+                        "bookmark-gray": "#7E7EAA",
+                        "bookmark-foot": "#1F1F39",
+                        "bookmark-white": "#FFFFFF",
+                        "bookmark-gradient-1": "#083F9B",
+                        "bookmark-gradient-2": "#7F56D9",
+                        "bookmark-icon": "#1B2336",
+                        "bookmark-login": "#4A4A4A",
+                        "bookmark-input": "#4F547B"
+
+                    }
+                },
+                fontFamily: {
+                    Rowdies: ["Rowdies", "sans-serif"],
+                    Righteous: ["Righteous", "sans-serif"],
+                    Saira: ["Saira Condensed", "sans-serif"],
+                },
+                container: {
+                    padding: "1rem",
+                    screen: {
+                        lg: "1124px",
+                        xl: "1124px",
+                        "2xl": "1124px",
+                    },
+                },
+            }
+        }
+    </script>
+    <title>TailWind</title>
+    <link rel="shortcut icon"
+        href="data:image/jpeg;base64,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"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Righteous&family=Rowdies&family=Saira+Condensed:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <header class="container bg-bookmark-white  mb-0 ">
+        <div class="flex mt-">
+            <nav>
+                <i class=""><img src="asstets/headr-logo.png" class="mr-48" alt="logo"></i>
+            </nav>
+            <nav
+                class="flex ml-20 gap-10 mr-8 mt-10 mb-1 space-x-4 text-bookmark-black font-Righteous font-normal text-bookmark-black">
+                <li class="list-none ">Home</li>
+                <li class="list-none ">About</li>
+                <li class="list-none ">Courses</li>
+                <li class="list-none ">Contact</li>
+            </nav>
+            <i class=" text-bookmark-icon ml-20 mr-16 mt-10 mb-1 "><img src="asstets/header-nav-part.png"
+                    alt="logo"></i>
+            <nav class="ml-20 mt-10 mb-1  font-Saira font-normal">
+                <button class=" text-bookmark-login font">Login</button>
+                <button class="ml-10 border-black bg-gradient-to-tl from-bookmark-gradient-2 to-bookmark-gradient-1
+              text-bookmark-white h-10 w-40 rounded-md">Signup</button>
+            </nav>
+        </div>
+        <div
+            class="flex font-Righteous font-normal  bg-gradient-to-r from-bookmark-gradient-1 to-bookmark-gradient-2 mt-0  pl-16 pt-16 text-bookmark-white">
+            <div class="">
+                <p class="text-lg text-bookmark-whit">Successful coaches are visionaries</p>
+                <h1 class="text-6xl ">Good <span class="text-bookmark-h-span">coaching</span> is<br> good
+                    teaching & <br>nothing else.</h1>
+                <button
+                    class="border-2 w-32 h-8   ml-10 text-bookmark-white font-thin font-Righteous-18 text-xs rounded mr-10">View</button>
+                <button class="mt-12">Get Free Consultation</button>
+
+                <div class="flex mt-10 ">
+                <input type="text" class="relative" placeholder="search">
+                <button class="absolute right-0 bottom-0 text-bookmark-black" >Serach</button>
+
+            </div>
+            </div>
+            
+            <div class="flex mt-6">
+                <div>
+                    <img src="asstets/header-side-line.png" class="h-44 ml-16" alt="line">
+                </div>
+                <div class="text-bookmark-white mr-8">
+                    <h2 class="mb-5">Shyam</h2>
+                    <p>In a coaching role, you ask the<br> questions and rely more on your <br>
+                        staff, who become the experts, to<br> provide the information.</p>
+                    <p class="text-bookmark-blue mt-4">4.9</p>
+                </div>
+            </div>
+            <div class="mb-0">
+                <p class="border rounded-t-full bg-bookmark-blue "><img src="asstets/header-leady-02.png" alt="main-img"
+                        class="h-96 rounded-t-full">
+                </p>
+            </div>
+        </div>
+        <div class="bg-bookmark-black mt-0">
+            <img src="asstets/spotify.png" alt="spotify">
+            <img src="asstets/Amazon.png" alt="Amazon">
+            <img src="asstets/spotify.png" alt="spotify">
+            <img src="asstets/cisco.png" alt="cisco">
+            <img src="asstets/logitech.png" alt="logitech">
+            <img src="asstets/Amazon.png" alt="Amazon">
+        </div>
+
+    </header>
+
+    <!-- featured Courses -->
+    <section class="container">
+        <div class="">
+            <div>
+                <h1>Featured Course</h1>
+                <p>The feature courses are we invented our teaching part</p>
+            </div>
+            <!-- cart 01 -->
+            <div>
+                <img src="asstets/feature 01.png" alt="Typography">
+                <div>
+                    <p>1,957 Students</p>
+                    <p>01h 59m</p>
+                </div>
+                <p>Motion Graphics: Create a Nice
+                    Typography Animation</p>
+                <div>
+                    <p>Rs.499</p>
+                    <img src="asstets/cart-imf.png" alt="cart-simble
+            ">
+                </div>
+            </div>
+            <!-- cart02 -->
+            <div>
+                <img src="asstets/feature 02.png" alt="PHP KNowledge">
+                <div>
+                    <p>9,575 Students</p>
+                    <p>01h 59m</p>
+                </div>
+                <p>Advance PHP knowledge with JS to
+                    make smart web</p>
+                <div>
+                    <p>Rs.499</p>
+                    <img src="asstets/cart-imf.png" alt="cart-simble
+            ">
+                </div>
+            </div>
+            <!-- cart 03 -->
+            <div>
+                <img src="asstets/feature 03.png" alt="Education Sofware">
+                <div>
+                    <p>2957 Students</p>
+                    <p>02h 49m</p>
+                </div>
+                <p>Education Software and PHP and JS
+                    System Script</p>
+                <div>
+                    <p>Rs.499</p>
+                    <img src="asstets/cart-imf.png" alt="cart-simble
+            ">
+                </div>
+            </div>
+            <!-- cart 04 -->
+            <div>
+                <img src="asstets/feature 04.png" alt="Typography">
+                <div>
+                    <p>5,457 Students</p>
+                    <p>01h 49m</p>
+                </div>
+                <p>The Complete Financial Analyst
+                    Training & Investing</p>
+                <div>
+                    <p>Rs.499</p>
+                    <img src="asstets/cart-imf.png" alt="cart-simble
+            ">
+                </div>
+            </div>
+            <!-- cart 05 -->
+            <div>
+                <img src="asstets/feature 05.png" alt="marketing">
+                <div>
+                    <p>593 Students</p>
+                    <p>01h 49m</p>
+                </div>
+                <p>Marketing 2023: Complete Guide To
+                    Instagram Growth</p>
+                <div>
+                    <p>Rs.499</p>
+                    <img src="asstets/cart-imf.png" alt="cart-simble
+            ">
+                </div>
+            </div>
+            <!-- cart 06 -->
+            <div>
+                <img src="asstets/feature 06.png" alt="Typography">
+                <div>
+                    <p>458 Students</p>
+                    <p>03h 00m</p>
+                </div>
+                <p>Learn 3D Modelling and Design
+                    for Beginners</p>
+                <div>
+                    <p>Rs.499</p>
+                    <img src="asstets/cart-imf.png" alt="cart-simble
+            ">
+                </div>
+            </div>
+
+            <button>Explore Courses</button>
+        </div>
+    </section>
+
+    <!-- Top Categories -->
+    <section class="container">
+        <div>
+            <div>
+                <h1>Top Catogories</h1>
+                <p>100+ unique online course list designs</p>
+            </div>
+
+            <div>
+                <!-- cart 01 -->
+                <div>
+                    <img src="asstets/Top catogoeis 01.png" alt="digital marketing">
+                    <div>
+                        <h1>Digtal
+                            Marketing</h1>
+                        <p>25 Courses</p>
+                    </div>
+                </div>
+                <!-- cart 02 -->
+                <div>
+                    <img src="asstets/Top catogoeis 02.png" alt="web development">
+                    <div>
+                        <h1>Web Development</h1>
+                        <p>16 Courses</p>
+                    </div>
+                </div>
+                <!-- cart 03 -->
+                <div>
+                    <img src="asstets/Top catogoeis 03.png" alt="ArtHumanities">
+                    <div>
+                        <h1>Art &
+                            Humanities</h1>
+                        <p>76 Courses</p>
+                    </div>
+                </div>
+                <!-- cart 04 -->
+                <div>
+                    <img src="asstets/Top catogoeis 04.png" alt="Personal development">
+                    <div>
+                        <h1>Personal Development</h1>
+                        <p>23 Courses</p>
+                    </div>
+                </div>
+                <!-- cart 05 -->
+                <div>
+                    <img src="asstets/Top catogoeis 05.png" alt="IT software">
+                    <div>
+                        <h1>IT and Software</h1>
+                        <p>110 Courses</p>
+                    </div>
+                </div>
+                <!-- cart 06 -->
+                <div>
+                    <img src="asstets/Top catogoeis 06.png" alt="graphic design">
+                    <div>
+                        <h1>GraphicDesign</h1>
+                        <p>85 Courses</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Subcription -->
+    <section class="container">
+        <div>
+            <div>
+                <div><img src="asstets/subs-l-01.png" alt="sub"></div>
+                <div><img src="asstets/subs-l-02.png" alt="sub"></div>
+                <div><img src="asstets/subs-l-03.png" alt="sub"></div>
+            </div>
+            <div>
+                <h1>Subscribe For Get Update
+                    Every New Courses</h1>
+                <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+                <input type="text" placeholder="enter your email">
+                <button>subscribe</button>
+            </div>
+            <div>
+                <div><img src="asstets/subs-r-01.png" alt="sub"></div>
+                <div><img src="asstets/subs-r-02.png" alt="sub"></div>
+                <div><img src="asstets/subs-r-03.png" alt="sub"></div>
+            </div>
+            <img src="asstets/clone light.png" alt="clone">
+            <img src="asstets/clone dark.png" alt="clone">
+            <div>
+                <div>
+                    <img src="asstets/subs-video-bg.png" alt="video-img">
+                </div>
+                <div>
+                    <img src="asstets/play-img.png">
+                </div>
+                <img src="asstets/subs-side-imd.png" alt="disign">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonial part -->
+    <section class="container">
+        <div>
+            <div>
+                <h1>Testimonials</h1>
+                <p>What our student say about us</p>
+            </div>
+            <div>
+                <img src="asstets/tetimonial main-img.png" alt="">
+                <div>
+                    <p>Such an amazing traniner and easily understand the entire
+                        syllabus, and the guidence will be super and good to the way of explaning.</p>
+                </div>
+                <img src="asstets/stars.png" alt="stars">
+            </div>
+            <div>
+                <img src="asstets/tetimonial main-img.png" alt="">
+                <div>
+                    <p>Such an amazing traniner and easily understand the entire
+                        syllabus, and the guidence will be super and good to the way of explaning.</p>
+                </div>
+                <img src="asstets/stars.png" alt="stars">
+            </div>
+            <div>
+                <img src="asstets/tetimonial main-img.png" alt="">
+                <div>
+                    <p>Such an amazing traniner and easily understand the entire
+                        syllabus, and the guidence will be super and good to the way of explaning.</p>
+                </div>
+                <img src="asstets/stars.png" alt="stars">
+            </div>
+        </div>
+    </section>
+
+    <!-- footar part -->
+
+    <footer>
+        <div>
+            <div>
+                <h1>Connect</h1>
+                <img src="asstets/headr-logo.png">
+                <p>Sri Jagannath Nivas,8-1-164/345/A/1,<br>
+                    Pragati Colony, Mailardevpally, Nawab<br>
+                    Saheb Kunta, Hyd, 500005</p>
+            </div>
+            <nav>
+                <h1>Classes </h1>
+                <li>Classroom courses</li>
+                <li>Virtual classroom courses</li>
+                <li>E-learning courses</li>
+                <li>Video Courses</li>
+                <li>Offline Courses</li>
+            </nav>
+            <nav>
+                <h1>Community</h1>
+                <li>Learner</li>
+                <li>Parteners</li>
+                <li>Developers</li>
+                <li>Transactions</li>
+                <li>Blog</li>
+            </nav>
+            <nav>
+                <h1>Quik Links</h1>
+                <li>Home</li>
+                <li>Professional Education</li>
+                <li>Courses</li>
+                <li>Admission</li>
+                <li>Testimonial</li>
+                <li>Programs</li>
+            </nav>
+            <nav>
+                <h1>More</h1>
+                <li>Press</li>
+                <li>Investors</li>
+                <li>Terms</li>
+                <li>Privacy</li>
+                <li>Help</li>
+                <li>Contact</li>
+            </nav>
+        </div>
+        <div>
+            <img src="asstets/Instagram.png" alt="insta">
+            <img src="asstets/WhatsApp.png" alt="insta">
+            <img src="asstets/Twitter.png" alt="twit">
+            <img src="asstets/LinkedIn.png" alt="linkin">
+            <img src="asstets/YouTube.png" alt="youtube">
+        </div>
+        <p>Copyright @ 2023 askmeidentity. All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
